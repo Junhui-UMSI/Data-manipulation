@@ -1,0 +1,6 @@
+09/Mar/2004	au:1	ca:1	cn:3	com:72	hu:2	info:1	net:17	org:5	ru:19	ua:1	us:1	ws:1
+10/Mar/2004	at:28	au:93	biz:2	br:2	ca:38	cc:1	cn:278	com:6518	cx:5	de:96	dk:23	edu:77	ee:9	fi:44	hr:25	hu:8	il:20	info:23	is:39	it:104	jp:194	kr:4	net:599	no:17	nz:173	org:68	ru:73	se:81	sk:9	tv:19	ua:22	uk:340	us:5	ws:26
+11/Mar/2004	at:46	au:81	biz:2	br:8	ca:50	cc:1	ch:3	cn:82	com:9363	cx:12	cz:53	de:235	dk:44	edu:84	ee:22	fi:45	fm:2	gov:1	hr:42	hu:2	id:14	il:16	info:25	is:50	it:122	jp:294	kr:7	net:782	nl:2	no:15	nu:4	nz:202	org:40	pl:4	ru:227	se:119	tv:38	tw:1	ua:40	uk:511	us:12	ws:67
+12/Mar/2004	ac:2	at:25	au:40	biz:18	br:3	ca:27	cn:86	com:12465	cz:1	de:262	dk:99	edu:37	ee:6	fi:21	fm:2	fr:1	hr:21	hu:2	il:14	info:13	is:13	it:35	jp:249	kr:42	net:580	nl:1	no:13	nu:1	nz:79	org:36	pl:6	ro:2	ru:227	se:58	sk:1	to:1	tv:71	ua:31	uk:267	us:6	ws:38
+13/Mar/2004	ac:2	am:1	ar:7	as:1	au:4	be:12	biz:21	br:132	bz:1	ca:13	cc:6	ch:3	cn:98	com:33940	cz:1	danni:5	de:163	dk:127	edu:4	es:1	fr:18	hu:3	info:35	is:1	it:4	jp:1133	kr:343	mx:1	net:2926	nl:103	nu:22	org:942	pl:32	ro:19	ru:785	st:3	tk:1	to:59	tr:3	tv:144	tw:1	ua:103	uk:93	us:90	vu:1	ws:73
+14/Mar/2004	ac:4	ar:1	au:52	be:2	biz:2	br:8	bz:1	ca:17	cc:11	cm:2	cn:13	com:9762	de:38	dk:47	fr:4	info:8	jp:231	kr:160	net:795	nl:9	no:1	nu:2	org:66	pl:1	ro:1	ru:64	sk:3	st:3	to:8	tv:6	ua:34	uk:14	us:5	ws:25	za:2
