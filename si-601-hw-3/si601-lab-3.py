@@ -100,9 +100,8 @@ json_str = '{"Belle": 3, "Aurora": 2, "Jasmine": 1, "Irene": 1, "Adella": 1}'
 # variable html_doc, and return the title of the page in a unicode string.
 # get_title() should return u'Three Little Pigs'
 def get_title():
-  # Your code here: make sure to modify the return statement to pass back
-  # the correct value.
-  return 
+  soup = BeautifulSoup(html_doc,"html.parser")
+  return soup.title.string
 
 
 # B. process_json (2 points)
@@ -110,9 +109,11 @@ def get_title():
 # in global variable json_str, and return the sum of the values in this dictionary.
 # process_json() should return 8 because 3+2+1+1+1 = 8
 def process_json():
-  # Your code here: make sure to modify the return statement to pass back
-  # the correct value.
-  return 
+  items = json.loads(json_str)
+  sum = 0
+  for key,value in items.iteritems():
+    sum += int(value)
+  return sum
 
 
 # C. get_pigs (3 points)
@@ -122,9 +123,13 @@ def process_json():
 # Note that it should return a string, not a list. 
 # get_pigs() should return '["Pig A", "Pig B", "Pig C"]'
 def get_pigs():
-  # Your code here: make sure to modify the return statement to pass back
-  # the correct value.
-  return 
+
+  soup = BeautifulSoup(html_doc,'html.parser')
+  taglist = soup.find_all('li')
+  piglist = []
+  for item in taglist:
+    piglist.append(item.h2.string)
+  return json.dumps(piglist)
 
 
 # D. get_story_headings (3 points)
@@ -133,9 +138,13 @@ def get_pigs():
 # Note that it should return a string, not a list. 
 # get_story_headings() should return '["Story 1", "Story 2", "Story 3"]'
 def get_story_headings():
-  # Your code here: make sure to modify the return statement to pass back
-  # the correct value.
-  return 
+  soup = BeautifulSoup(html_doc,"html.parser")
+  storylist = soup.find_all('h2')[3:6]
+  returnlist = []
+  for item in storylist:
+    returnlist.append(item.string)
+  return json.dumps(returnlist)
+
 
 
 # E. get_houses (3 points)
@@ -145,9 +154,13 @@ def get_story_headings():
 # get_houses() should return '[["Pig A", "Straw"], ["Pig B", "Stick"], ["Pig C", "Brick"]]'
 # HINT: contruct a list of tuples first, and then convert it to a JSON string.
 def get_houses():
-  # Your code here: make sure to modify the return statement to pass back
-  # the correct value.
-  return 
+  soup = BeautifulSoup(html_doc,"html.parser")
+  list1 = soup.find_all('tr')[1:]
+  itemlist = []
+  for item in list1:
+    itemlist.append([item.find_all('td')[0].string,item.find_all('td')[1].string])
+
+  return json.dumps(itemlist)
 
 
 # F. get_links (3 points)
@@ -156,9 +169,12 @@ def get_houses():
 # Note that it should return a string, not a list.
 # get_links() should return '["http://en.wikipedia.org/wiki/Three_Little_Pigs", "http://en.wikipedia.org/wiki/Big_bad_wolf"]'
 def get_links():
-  # Your code here: make sure to modify the return statement to pass back
-  # the correct value.
-  return 
+  soup = BeautifulSoup(html_doc,'html.parser')
+  link = soup.find_all('a')
+  linklist = []
+  for item in link:
+    linklist.append(item['href'])
+  return json.dumps(linklist)
 
 
 # G. treasure_hunting (4 points)
@@ -172,9 +188,20 @@ def get_links():
 # treasure_hunting() should return the Unicode string u'\u6d4b\u8bd5' corresponding
 # to the characters 测试  (the code points U+6D4B U+8BD5)
 def treasure_hunting():
-  # Your code here: make sure to modify the return statement to pass back
-  # the correct value.
-  return 
+  response = urllib2.urlopen('http://www.example.com')
+  html_doc1 = response.read()
+  soup = BeautifulSoup(html_doc1,'html.parser')
+  link = soup.find_all('a')
+  for item in link:
+    link = item['href']
+  response = urllib2.urlopen(link)
+  html_doc2 = response.read()
+  soup = BeautifulSoup(html_doc2,'html.parser')
+  table = soup.find_all('table')[0]
+  thirdrow = table.find_all('tr')[3]
+  # firstcolumn = json.dumps(thirdrow.find_all('td')[0].string)   return the u'\u6d4b\u8bd5'
+  firstcolumn = thirdrow.find_all('td')[0].string
+  return firstcolumn
 
 
 #######################################################################
